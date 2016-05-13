@@ -100,6 +100,7 @@
   <ItemGroup>
     <Content Include="Account\Register.aspx" />
     <Content Include="Business\EnteringCompanyInformation.aspx" />
+    <Content Include="Nav\MenuTest.aspx" />
     <Content Include="Nav\MyTreeView.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="MasterPage\Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nav\MenuTest.aspx.cs">
+      <DependentUpon>MenuTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nav\MenuTest.aspx.designer.cs">
+      <DependentUpon>MenuTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nav\MyTreeView.aspx.cs">
       <DependentUpon>MyTreeView.aspx</DependentUpon>

@@ -15,7 +15,7 @@
         </asp:TreeView>
     
     </div>
-        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="web2sitemap" />
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
     </form>
 </body>
 </html>
