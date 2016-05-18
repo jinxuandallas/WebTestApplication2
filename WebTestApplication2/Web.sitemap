@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title="用户管理"  description="管理">
-        <siteMapNode url="~\WebForm1.aspx" title="登录"  description="登录" />
-        <siteMapNode url="~\Password\ChangePassword.aspx" title="变更密码"  description="更改密码" />
+    <siteMapNode url="" title="管理2"  description="">
+        <siteMapNode url="~/Business/EnteringCompanyInformation.aspx" title="输入"  description="输入企业信息" />
+        <siteMapNode url="~/Account/Register.aspx" title="注册"  description="" />
     </siteMapNode>
 </siteMap>
