@@ -105,6 +105,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Account\AjaxHandler1.ashx" />
+    <Content Include="table.aspx" />
     <Content Include="Web3.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="MasterPage\Site1.Master" />
@@ -195,6 +196,13 @@
     </Compile>
     <Compile Include="Successful.aspx.designer.cs">
       <DependentUpon>Successful.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="table.aspx.cs">
+      <DependentUpon>table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="table.aspx.designer.cs">
+      <DependentUpon>table.aspx</DependentUpon>
     </Compile>
     <Compile Include="Textbox.aspx.cs">
       <DependentUpon>Textbox.aspx</DependentUpon>
