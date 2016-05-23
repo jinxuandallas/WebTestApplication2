@@ -18,7 +18,7 @@ namespace WebTestApplication2
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             Login1.DestinationPageUrl = "Successful.aspx";
-           MyUser u = new MyUser();
+            MyUser u = new MyUser();
             e.Authenticated=u.ValidateUser(Login1.UserName, Login1.Password);
         }
     }

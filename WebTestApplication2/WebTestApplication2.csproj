@@ -100,6 +100,7 @@
   <ItemGroup>
     <Content Include="Account\Register.aspx" />
     <Content Include="Business\EnteringCompanyInformation.aspx" />
+    <Content Include="MultiView.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="MasterPage\Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MultiView.aspx.cs">
+      <DependentUpon>MultiView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiView.aspx.designer.cs">
+      <DependentUpon>MultiView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Password\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
