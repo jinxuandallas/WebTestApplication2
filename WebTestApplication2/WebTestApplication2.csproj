@@ -101,6 +101,8 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Business\EnteringCompanyInformation.aspx" />
     <Content Include="MultiView.aspx" />
+    <Content Include="Nav\MenuTest.aspx" />
+    <Content Include="Nav\MyTreeView.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -168,6 +170,20 @@
     </Compile>
     <Compile Include="MultiView.aspx.designer.cs">
       <DependentUpon>MultiView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nav\MenuTest.aspx.cs">
+      <DependentUpon>MenuTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nav\MenuTest.aspx.designer.cs">
+      <DependentUpon>MenuTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nav\MyTreeView.aspx.cs">
+      <DependentUpon>MyTreeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nav\MyTreeView.aspx.designer.cs">
+      <DependentUpon>MyTreeView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Password\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
