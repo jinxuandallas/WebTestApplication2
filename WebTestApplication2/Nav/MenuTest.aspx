@@ -26,7 +26,7 @@
 
          <br />
 
-         <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource1" StaticDisplayLevels="2" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="1.1em" ForeColor="#284E98" StaticSubMenuIndent="50px">
+         <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2" StaticDisplayLevels="2" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="1.1em" ForeColor="#284E98" StaticSubMenuIndent="50px">
                            <LevelMenuItemStyles>
                                 <asp:MenuItemStyle BackColor="#0066ff" Font-Underline="False" ForeColor="White" Width="200px" />
                            </LevelMenuItemStyles>
@@ -44,6 +44,7 @@
     
     </div>
         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="web2sitemap" />
+        <asp:SiteMapDataSource ID="SiteMapDataSource2" runat="server" ShowStartingNode="False" SiteMapProvider="web1sitemap" />
     </form>
 </body>
 </html>
