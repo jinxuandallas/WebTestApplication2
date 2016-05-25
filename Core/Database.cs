@@ -394,6 +394,50 @@ namespace Core
             return ID;
         }
 
+        /// <summary>
+        /// 经测试失败，不能返回数据库中新插入的Guid，改用程序中生成Guid再插入的方法
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        protected string InsertReturnGUID(string sql, IDataParameter[] parameters)
+        {
+            string ID="";
+
+
+            sql += " select @@identity";
+            if (Connection.State == ConnectionState.Closed) Connection.Open();
+
+            SqlCommand com;
+
+            com = BuildCommand(sql, parameters);
+
+            //com.CommandText = sql;
+
+
+            try
+            {
+                SqlDataReader Reader;
+                Reader = com.ExecuteReader();
+                if (Reader.Read())
+                    ID = Reader[0].ToString();
+                Reader.Close();
+            }
+            catch (Exception e)
+            {
+                deal(e);
+            }
+
+
+            return ID;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         protected bool Insert(string sql, IDataParameter[] parameters)
         {
 

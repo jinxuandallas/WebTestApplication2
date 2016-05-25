@@ -114,6 +114,7 @@
     <Content Include="MasterPage\Site1.Master" />
     <Content Include="WebForm3.aspx" />
     <Content Include="WebForm_Master.aspx" />
+    <Content Include="WebForm_TestIndentity.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,6 +270,13 @@
     </Compile>
     <Compile Include="WebForm_Master.aspx.designer.cs">
       <DependentUpon>WebForm_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm_TestIndentity.aspx.cs">
+      <DependentUpon>WebForm_TestIndentity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm_TestIndentity.aspx.designer.cs">
+      <DependentUpon>WebForm_TestIndentity.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
