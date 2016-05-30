@@ -108,6 +108,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Account\AjaxHandler1.ashx" />
+    <Content Include="ShowTest\ShowControlTest.aspx" />
     <Content Include="table.aspx" />
     <Content Include="Web3.aspx" />
     <Content Include="WebForm2.aspx" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="SendMail\SendMail.aspx.designer.cs">
       <DependentUpon>SendMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTest\ShowControlTest.aspx.cs">
+      <DependentUpon>ShowControlTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowTest\ShowControlTest.aspx.designer.cs">
+      <DependentUpon>ShowControlTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
