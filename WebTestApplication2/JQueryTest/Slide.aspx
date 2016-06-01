@@ -46,15 +46,18 @@
         <form id="form1" runat="server">
 		<div id="slideBox" class="slideBox">
 			<div class="hd">
-				<ul><li>1</li><li>2</li><li>3</li><li>4</li></ul>
+				<asp:Repeater ID="Repeater1" runat="server">
+        <HeaderTemplate><ul></HeaderTemplate>
+        <ItemTemplate><li><%# Container.DataItem %></li></ItemTemplate>
+        <FooterTemplate></ul></FooterTemplate>
+    </asp:Repeater>
 			</div>
 			<div class="bd">
-				<ul>
-					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="../Images/a.jpg" /></a></li>
-					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="../Images/b.jpg" /></a></li>
-					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="../Images/pic3.jpg" /></a></li>
-                    <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="../Images/pic2.jpg" /></a></li>
-				</ul>
+				<asp:Repeater ID="Repeater2" runat="server">
+            <HeaderTemplate><ul></HeaderTemplate>
+        <ItemTemplate><li><a href="http://www.SuperSlide2.com" target="_blank"><img src="../Images/pic<%# Container.DataItem.ToString() %>.jpg" /></a></li></ItemTemplate>
+        <FooterTemplate></ul></FooterTemplate>
+        </asp:Repeater>
 			</div>
 
 			<!-- 下面是前/后按钮代码，如果不需要删除即可 -->

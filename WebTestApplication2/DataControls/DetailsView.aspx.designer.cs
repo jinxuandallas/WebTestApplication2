@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WebTestApplication2.JQueryTest {
+namespace WebTestApplication2.DataControls {
     
     
-    public partial class Slide {
+    public partial class DetailsView {
         
         /// <summary>
         /// form1 控件。
@@ -22,21 +22,21 @@ namespace WebTestApplication2.JQueryTest {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Repeater1 控件。
+        /// SqlDataSource1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// Repeater2 控件。
+        /// DetailsView1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
     }
 }

@@ -100,16 +100,23 @@
   <ItemGroup>
     <Content Include="Account\Register.aspx" />
     <Content Include="Business\EnteringCompanyInformation.aspx" />
+    <Content Include="DataControls\DetailsView.aspx" />
     <Content Include="Images\a.jpg" />
     <Content Include="Images\b.jpg" />
     <Content Include="Images\pic1.jpg" />
     <Content Include="Images\pic2.jpg" />
     <Content Include="Images\pic3.jpg" />
+    <Content Include="Images\pic4.jpg" />
+    <Content Include="Images\pic5.jpg" />
+    <Content Include="Images\pic6.jpg" />
+    <Content Include="Images\pic7.jpg" />
     <Content Include="Images\qq.jpg" />
     <Content Include="Images\slider-arrow.png" />
     <Content Include="JQueryTest\2.0-focus.html" />
     <Content Include="JQueryTest\Repeater.aspx" />
     <Content Include="JQueryTest\Slide.aspx" />
+    <Content Include="JQueryTest\SlideRepeater.aspx" />
+    <Content Include="LabelTest.aspx" />
     <Content Include="MultiView.aspx" />
     <Content Include="Nav\MenuTest.aspx" />
     <Content Include="Nav\MyTreeView.aspx" />
@@ -171,6 +178,13 @@
     <Compile Include="Business\EnteringCompanyInformation.aspx.designer.cs">
       <DependentUpon>EnteringCompanyInformation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataControls\DetailsView.aspx.cs">
+      <DependentUpon>DetailsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataControls\DetailsView.aspx.designer.cs">
+      <DependentUpon>DetailsView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="JQueryTest\Repeater.aspx.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,6 +198,20 @@
     </Compile>
     <Compile Include="JQueryTest\Slide.aspx.designer.cs">
       <DependentUpon>Slide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryTest\SlideRepeater.aspx.cs">
+      <DependentUpon>SlideRepeater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryTest\SlideRepeater.aspx.designer.cs">
+      <DependentUpon>SlideRepeater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabelTest.aspx.cs">
+      <DependentUpon>LabelTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabelTest.aspx.designer.cs">
+      <DependentUpon>LabelTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

@@ -10,7 +10,7 @@
 namespace WebTestApplication2.JQueryTest {
     
     
-    public partial class Slide {
+    public partial class SlideRepeater {
         
         /// <summary>
         /// form1 控件。
