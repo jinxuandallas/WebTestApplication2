@@ -101,6 +101,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Business\EnteringCompanyInformation.aspx" />
     <Content Include="DataControls\DetailsView.aspx" />
+    <Content Include="FileUpload\FileUploadTest.aspx" />
     <Content Include="Images\a.jpg" />
     <Content Include="Images\b.jpg" />
     <Content Include="Images\pic1.jpg" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="DataControls\DetailsView.aspx.designer.cs">
       <DependentUpon>DetailsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload\FileUploadTest.aspx.cs">
+      <DependentUpon>FileUploadTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileUpload\FileUploadTest.aspx.designer.cs">
+      <DependentUpon>FileUploadTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="JQueryTest\Repeater.aspx.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>
