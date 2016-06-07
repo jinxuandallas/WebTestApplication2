@@ -11,20 +11,39 @@ namespace WebTestApplication2.FileUpload
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            System.Web.UI.WebControls.FileUpload fu = new System.Web.UI.WebControls.FileUpload();
-            Label l = new Label();
-            l.Text = "tt";
-            form1.Controls.Add(fu);
-            form1.Controls.Add(l);
+            if(IsPostBack)
+
+            for (int i=1; i < 4; i++)
+            {
+                System.Web.UI.WebControls.FileUpload fu = new System.Web.UI.WebControls.FileUpload();
+                fu=Panel1.FindControl("")
+                Label l = new Label();
+                l.Text = i.ToString();
+                Button btn = new Button();
+                btn.ID = "btn" + i.ToString();
+                btn.Text = "B" + i.ToString();
+                btn.Click += Btn_Click;
+                Panel1.Controls.Add(fu);
+                Panel1.Controls.Add(l);
+                Panel1.Controls.Add(btn);
+                Panel1.Controls.Add(new LiteralControl("<br />"));
+            }
+            else
+            
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            Response.Write(((Button)sender).ID);
         }
 
         protected void Add_Click(object sender, EventArgs e)
         {
             System.Web.UI.WebControls.FileUpload fu = new System.Web.UI.WebControls.FileUpload();
             Label l = new Label();
-            l.Text = "tt";
-            form1.Controls.Add(fu);
-            form1.Controls.Add(l);
+            l.Text = "yy";
+            Panel1.Controls.Add(fu);
+            Panel1.Controls.Add(l);
         }
     }
 }

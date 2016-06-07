@@ -10,14 +10,15 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
+    
+        
                 <asp:FileUpload ID="FileUpload1" runat="server" />
                 <asp:Button ID="Add" runat="server" OnClick="Add_Click" Text="添加" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
+           
+    
+                <asp:Panel ID="Panel1" runat="server">
+                </asp:Panel>
+           
     
     </div>
         
