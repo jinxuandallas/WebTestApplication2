@@ -16,6 +16,9 @@
                 <asp:Button ID="Add" runat="server" OnClick="Add_Click" Text="添加" />
            
     
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+           
+    
                 <asp:Panel ID="Panel1" runat="server">
                 </asp:Panel>
            

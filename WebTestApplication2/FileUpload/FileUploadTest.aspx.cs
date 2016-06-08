@@ -11,8 +11,22 @@ namespace WebTestApplication2.FileUpload
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int i;
             if(IsPostBack)
+            {
+                
+                for(i=1;i<6;i++)
+                {
+                    System.Web.UI.WebControls.FileUpload fu =(System.Web.UI.WebControls.FileUpload) Panel1.FindControl("fu_" + i);
+                    Button btn = (Button)Panel1.FindControl("btn_" + i);
+                    Panel1.Controls.Add(fu);
+                    Panel1.Controls.Add(btn);
+                    Panel1.Controls.Add(new LiteralControl("<br />"));
+                }
+                
+            }
 
+                /*
             for (int i=1; i < 4; i++)
             {
                 System.Web.UI.WebControls.FileUpload fu = new System.Web.UI.WebControls.FileUpload();
@@ -28,7 +42,18 @@ namespace WebTestApplication2.FileUpload
                 Panel1.Controls.Add(btn);
                 Panel1.Controls.Add(new LiteralControl("<br />"));
             }
+            */
             else
+                for(i=1;i<6;i++)
+                {
+                    System.Web.UI.WebControls.FileUpload fu = new System.Web.UI.WebControls.FileUpload();
+                    fu.ID = "fu_" + i;
+                    Button btn = new Button();
+                    btn.ID = "btn_" + i.ToString();
+                    Panel1.Controls.Add(fu);
+                    Panel1.Controls.Add(btn);
+                    Panel1.Controls.Add(new LiteralControl("<br />"));
+                }
             
         }
 
@@ -39,11 +64,15 @@ namespace WebTestApplication2.FileUpload
 
         protected void Add_Click(object sender, EventArgs e)
         {
+            Response.Write(FileUpload1.FileName+"<br/>"+TextBox1.Text);
+           
+            /*
             System.Web.UI.WebControls.FileUpload fu = new System.Web.UI.WebControls.FileUpload();
             Label l = new Label();
             l.Text = "yy";
             Panel1.Controls.Add(fu);
             Panel1.Controls.Add(l);
+            */
         }
     }
 }
