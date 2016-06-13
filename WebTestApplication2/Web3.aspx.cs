@@ -14,7 +14,7 @@ namespace WebTestApplication2
         {
             test t = new test();
             //证明select语句返回-1
-            Response.Write( t.testRetunCount());
+            Response.Write( t.testReturnCount());
         }
     }
 }
