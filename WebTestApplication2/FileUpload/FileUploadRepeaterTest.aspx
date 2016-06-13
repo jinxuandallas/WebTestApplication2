@@ -17,12 +17,15 @@
             <ItemTemplate>
                 <asp:FileUpload ID="FileUpload" runat="server" />
                 <asp:TextBox ID="TextBox" runat="server"></asp:TextBox>
-               
                 <br />
             </ItemTemplate>
         </asp:Repeater>
     </asp:Panel>
+        
+                
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="height: 21px" Text="Button" />
+    
+        <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
     
     </div>
     </form>

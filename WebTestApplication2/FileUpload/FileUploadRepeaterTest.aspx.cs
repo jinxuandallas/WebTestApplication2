@@ -32,7 +32,15 @@ namespace WebTestApplication2.FileUpload
                 {
                     if (postedFile.ContentLength > 0)
                     {
-                        Response.Write(filepath+postedFile.FileName + "<br/>");
+                        string extName = System.IO.Path.GetExtension(postedFile.FileName).ToLower();
+                        if (extName != ".jpg" && extName != ".jpeg" && extName != ".gif" && extName != ".png")
+                        {
+                            Label1.Text = "只能上传jpg，gif，png文件";
+                            return;
+                        }
+                        //DateTime dt = new DateTime();
+                        string newFilename = DateTime.Now.ToString("yyyyMMddhhmmss")+extName; 
+                        Response.Write(filepath+ newFilename + "<br/>");
                         //Label1.Text += "文件 #" + (i + 1) + "：" + System.IO.Path.GetFileName(postedFile.FileName) + "〈br/>";
                         //postedFile.SaveAs(filepath + System.IO.Path.GetFileName(postedFile.FileName));
                     }
