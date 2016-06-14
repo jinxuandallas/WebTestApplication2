@@ -8,14 +8,14 @@ using Core;
 
 namespace WebTestApplication2.FileUpload
 {
-    public partial class FileUploadRepeaterTest : System.Web.UI.Page
+    public partial class jsFileUploadtest : System.Web.UI.Page
     {
-        public int[] a = { 1, 2, 3, 4, 5 };
+        public int a;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-                Repeater1.DataBind();
-
+            a = 5;
+            Image1.ImageUrl = "~/FileUpload/Upload/201606141107311.jpg";
+            Repeater1.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -26,8 +26,8 @@ namespace WebTestApplication2.FileUpload
             {
                 System.IO.Directory.CreateDirectory(filepath);//创建文件夹
             }
-            for (int i = 0; i<uploadFiles.Count; i++)
-            { 
+            for (int i = 0; i < uploadFiles.Count; i++)
+            {
                 HttpPostedFile postedFile = uploadFiles[i];
                 try
                 {
@@ -40,14 +40,17 @@ namespace WebTestApplication2.FileUpload
                             return;
                         }
                         //DateTime dt = new DateTime();
-                        string newFilename = DateTime.Now.ToString("yyyyMMddhhmmss")+i+extName;
-                        //Response.Write(filepath+ newFilename + "<br/>");
+                        string newFilename = DateTime.Now.ToString("yyyyMMddhhmmss") + i + extName;
+                        //Response.Write(filepath + newFilename + "<br/>");
+                        Response.Write(filepath + postedFile.FileName + "<br/>");
                         //Label1.Text += "文件 #" + (i + 1) + "：" + System.IO.Path.GetFileName(postedFile.FileName) + "〈br/>";
-                        string newfilepath = filepath + newFilename ;
+                        /*
+                        string newfilepath = filepath + newFilename;
                         postedFile.SaveAs(newfilepath);
                         test t = new test();
-                        bool succeed=t.AddPic(newFilename);
+                        bool succeed = t.AddPic(newfilepath);
                         if (succeed) Label1.Text = "上传成功";
+                        */
                     }
                 }
                 catch (Exception Ex)
@@ -56,18 +59,6 @@ namespace WebTestApplication2.FileUpload
                     //Label1.Text += "发生错误： " + Ex.Message;
                 }
             }
-
-            /*
-            for (int i=0;i<5;i++)
-            {
-               /* foreach (RepeaterItem rep in Repeater1.Items)
-                    foreach (Control con in rep.Controls)
-                        Response.Write(con.ID + "<br/>");
-                        
-                Response.Write(((TextBox)Repeater1.Items[i].FindControl("TextBox")).Text+"<br/>");
-                Response.Write(((System.Web.UI.WebControls.FileUpload)Repeater1.Items[i].FindControl("FileUpload")).FileName + "<br/>");
-            */
-            
         }
     }
 }
