@@ -99,6 +99,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\Test.mdf" />
+    <Content Include="App_Data\Test_log.ldf">
+      <DependentUpon>Test.mdf</DependentUpon>
+    </Content>
     <Content Include="Business\EnteringCompanyInformation.aspx" />
     <Content Include="DataControls\DetailsView.aspx" />
     <Content Include="FileUpload\FileUploadRepeaterTest.aspx" />

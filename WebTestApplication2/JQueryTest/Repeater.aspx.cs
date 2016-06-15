@@ -11,7 +11,7 @@ namespace WebTestApplication2.JQueryTest
     public partial class Repeater : System.Web.UI.Page
     {
         public int[] a = { 1, 2, 3, 4, 5 };
-        DataTable dt;
+        //DataTable dt;
 
         protected void Page_Load(object sender, EventArgs e)
         {

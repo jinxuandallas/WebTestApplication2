@@ -5,21 +5,52 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Core;
+using System.Data;
 
 namespace WebTestApplication2.FileUpload
 {
     public partial class jsFileUploadtest : System.Web.UI.Page
     {
         public int a;
+        public DataSet ds;
         protected void Page_Load(object sender, EventArgs e)
         {
-            a = 5;
-            Image1.ImageUrl = "~/FileUpload/Upload/201606141107311.jpg";
-            Repeater1.DataBind();
+            test t = new test();
+            ds = t.GetPic();
+            a = 5 - ds.Tables[0].Rows.Count;
+            if (!IsPostBack)
+            {
+                
+                ViewState["dataset"] = ds;
+                Repeater1.DataSource = ds;
+                Repeater1.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //转换要删除的文件名称
+            string hv = ";Upload/201606140819362.jpg;Upload/201606140819364.jpg";
+            //从Hidden控件获取文件集合
+            Response.Write(Hidden1.Value + "<br/>");
+            //Tools t = new Tools();
+            //List<string> l = t.GetFilename(Hidden1.Value);
+            UploadPic up = new UploadPic();
+            List<string> l = up.GetFilename(hv);
+
+            //foreach (string s in l)
+            //    Response.Write(Server.MapPath(s)+"<br/>");
+            
+            //删除图片文件
+            up.DelPicFile(l);
+            //删除图片在数据库中的记录
+            up.DelDbPic(l);
+
+            //Response.Write(Repeater1.Items[0].FindControl(");
+            /*
+            foreach (RepeaterItem item in Repeater1.Items)
+                Response.Write((item.FindControl("img") as Image).ImageUrl+"<br/>");
+                */
             string filepath = Server.MapPath("Upload") + "\\";
             HttpFileCollection uploadFiles = Request.Files;
             if (!System.IO.Directory.Exists(filepath))//判断文件夹是否已经存在
@@ -59,6 +90,22 @@ namespace WebTestApplication2.FileUpload
                     //Label1.Text += "发生错误： " + Ex.Message;
                 }
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            /*
+            ds = (DataSet)ViewState["dataset"];
+            string imgurl= ((Image)((System.Web.UI.HtmlControls.HtmlInputButton)sender).Parent.FindControl("img")).ImageUrl;
+            //Response.Write(((Image)((Button)sender).Parent.FindControl("img")).ImageUrl+"<br/>");
+            //.Delete();
+            ds.Tables[0].Rows.Remove(ds.Tables[0].Rows.Find(imgurl));
+            ViewState["dataset"] = ds;
+            a = 5 - ds.Tables[0].Rows.Count;
+            Repeater1.DataSource = ds;
+            Repeater1.DataBind();
+            //Label2.Text = ((Image)((Button)sender).Parent.FindControl("img")).ImageUrl;
+            */
         }
     }
 }

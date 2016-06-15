@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Core
 {
@@ -41,6 +42,13 @@ namespace Core
             if (rtn == 1)
                 return true;
             return false;
+        }
+
+        public DataSet GetPic()
+        {
+            DataSet ds= GetDataSet("select 图片地址 from 图片");
+            ds.Tables[0].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns[0] };
+            return ds;
         }
     }
 }
