@@ -11,6 +11,14 @@
         .delButton{}
         .pic{}
     </style>
+    <!--<script>
+        function ow(url)
+        {
+            var v=$(this).attr("src")
+            alert(v);
+            //window.open(v,"_blank");
+        }
+    </script>-->
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,7 +26,9 @@
 <asp:Repeater ID="Repeater1" runat="server">
                     <ItemTemplate>
                         <div id="pic">
-                        <asp:Image ImageUrl='<%# Eval("图片地址") %>' ID="img"  CssClass="pic" Height="100px" Width="100px" runat="server" />
+                        <!--<a  href='<%# Eval("图片地址") %>' target="_blank"></a>-->
+                            <asp:Image ImageUrl='<%# Eval("图片地址") %>' ID="img"  CssClass="pic" Height="100px" Width="100px" runat="server"/>
+                            <!--<asp:ImageButton ID="ImageButton1"  ImageUrl='<%# Eval("图片地址") %>' OnClientClick='ow("aa")'  CssClass="pic" Height="100px" Width="100px" runat="server" />-->
                             <!--<asp:Button ID="Button2" runat="server" Text="删除"  CssClass="delButton"  OnClick="Button2_Click" />-->
                             <input type="button" id="del" class="delButton" value="删除"/>
                         <br />
@@ -33,13 +43,15 @@
         <div id="zhi">
             <div id="content">
                 <input id="File1" type="file" runat="server"/><input type="button" id="jia" value="添加" /><input
-                    type="button" value="删除" id="jian" /><br />
+                    type="button" value="删除" id="jian" />
+                <br />
             </div>
         </div>
     </div>
     <input type="button" id="tianjia" value="添加" />
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="提交" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="重置" />
         <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
         <input id="Hidden1" type="hidden" runat="server"/>
         </form>
@@ -99,5 +111,9 @@
         });
         //*/
         
+        $(".pic").click(function(){
+            window.open($(this).attr("src"),"_blank")
+            //alert($(this).attr("src"));
+        })
     })
 </script>

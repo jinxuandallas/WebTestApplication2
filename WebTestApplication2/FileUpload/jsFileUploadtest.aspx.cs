@@ -13,29 +13,35 @@ namespace WebTestApplication2.FileUpload
     {
         public int a;
         public DataSet ds;
+        protected UploadPic up;
         protected void Page_Load(object sender, EventArgs e)
+        {
+            InitandBind();
+
+                //ViewState["dataset"] = ds;
+            
+        }
+
+        protected void InitandBind()
         {
             test t = new test();
             ds = t.GetPic();
             a = 5 - ds.Tables[0].Rows.Count;
-            if (!IsPostBack)
-            {
-                
-                ViewState["dataset"] = ds;
-                Repeater1.DataSource = ds;
-                Repeater1.DataBind();
-            }
-        }
+            up = new UploadPic();
 
+            Repeater1.DataSource = ds;
+            Repeater1.DataBind();
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //return;
             //转换要删除的文件名称
             string hv = ";Upload/201606140819362.jpg;Upload/201606140819364.jpg";
             //从Hidden控件获取文件集合
             Response.Write(Hidden1.Value + "<br/>");
             //Tools t = new Tools();
             //List<string> l = t.GetFilename(Hidden1.Value);
-            UploadPic up = new UploadPic();
+            //UploadPic up = new UploadPic();
             List<string> l = up.GetFilename(hv);
 
             //foreach (string s in l)
@@ -57,6 +63,14 @@ namespace WebTestApplication2.FileUpload
             {
                 System.IO.Directory.CreateDirectory(filepath);//创建文件夹
             }
+
+            string examResult = up.ExamFile(Request.Files);//检查文件大小,类型是否符合规定
+
+            if (examResult!= "文件检查成功")
+            {
+                Label1.Text = examResult;
+                return;
+            }
             for (int i = 0; i < uploadFiles.Count; i++)
             {
                 HttpPostedFile postedFile = uploadFiles[i];
@@ -64,24 +78,28 @@ namespace WebTestApplication2.FileUpload
                 {
                     if (postedFile.ContentLength > 0)
                     {
+                        /*
                         string extName = System.IO.Path.GetExtension(postedFile.FileName).ToLower();
                         if (extName != ".jpg" && extName != ".jpeg" && extName != ".gif" && extName != ".png")
                         {
                             Label1.Text = "只能上传jpg，gif，png文件";
                             return;
                         }
-                        //DateTime dt = new DateTime();
+                        */
+
+                        string extName = System.IO.Path.GetExtension(postedFile.FileName).ToLower();
                         string newFilename = DateTime.Now.ToString("yyyyMMddhhmmss") + i + extName;
                         //Response.Write(filepath + newFilename + "<br/>");
-                        Response.Write(filepath + postedFile.FileName + "<br/>");
+                        //Response.Write(filepath + postedFile.FileName + "<br/>");
                         //Label1.Text += "文件 #" + (i + 1) + "：" + System.IO.Path.GetFileName(postedFile.FileName) + "〈br/>";
-                        /*
+                        ///*
                         string newfilepath = filepath + newFilename;
                         postedFile.SaveAs(newfilepath);
                         test t = new test();
-                        bool succeed = t.AddPic(newfilepath);
+                        bool succeed = t.AddPic(newFilename);
                         if (succeed) Label1.Text = "上传成功";
-                        */
+                        //*/
+                        InitandBind();
                     }
                 }
                 catch (Exception Ex)

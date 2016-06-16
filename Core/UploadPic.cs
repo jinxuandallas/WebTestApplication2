@@ -58,5 +58,28 @@ namespace Core
             }
             return true;
         }
+
+        public string ExamFile(HttpFileCollection uploadFiles)
+        {
+            int filesSize = 0;
+            string extName;
+            //此处只能使用for不能使用foreach因为uf可能为空，将导致异常
+            //foreach(HttpPostedFile uf in uploadFiles)
+            for (int i=0;i<uploadFiles.Count;i++)
+            {
+                if (uploadFiles[i].ContentLength > 0)
+                {
+                    extName = System.IO.Path.GetExtension(uploadFiles[i].FileName).ToLower();
+                    if (extName != ".jpg" && extName != ".jpeg" && extName != ".gif" && extName != ".png")
+                        return "只能上传jpg，gif，png文件";
+                    if (uploadFiles[i].ContentLength > 2097152)
+                        return "单个文件不能超过2M";
+                    filesSize += uploadFiles[i].ContentLength;
+                    if (filesSize > 5242880)
+                        return "总文件不能超过5M";
+                }
+            }
+            return "文件检查成功";
+        }
     }
 }
