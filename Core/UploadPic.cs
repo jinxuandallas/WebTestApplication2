@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.IO;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Core
 {
@@ -62,6 +63,17 @@ namespace Core
         public string ExamFile(HttpFileCollection uploadFiles)
         {
             int filesSize = 0;
+            test t = new test();
+            DataSet ds = t.GetPic();
+            //foreach (DataRow dr in ds.Tables[0].Rows)
+            System.IO.FileInfo fi;
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                fi = new FileInfo(HttpContext.Current.Server.MapPath(dr[0].ToString()));
+                filesSize += int.Parse(fi.Length.ToString());
+            }
+
+                    
             string extName;
             //此处只能使用for不能使用foreach因为uf可能为空，将导致异常
             //foreach(HttpPostedFile uf in uploadFiles)

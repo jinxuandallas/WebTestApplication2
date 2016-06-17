@@ -16,33 +16,37 @@ namespace WebTestApplication2.FileUpload
         protected UploadPic up;
         protected void Page_Load(object sender, EventArgs e)
         {
-            InitandBind();
+            if (!IsPostBack)
+                InitandBind();
 
                 //ViewState["dataset"] = ds;
             
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// /
         protected void InitandBind()
         {
             test t = new test();
             ds = t.GetPic();
             a = 5 - ds.Tables[0].Rows.Count;
             up = new UploadPic();
-
+            Hidden1.Value = string.Empty;//此处必须将hidden值清零，否则会导致上一次保存在hidden的值这一次继续附加在hidden的value内
             Repeater1.DataSource = ds;
             Repeater1.DataBind();
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //return;
             //转换要删除的文件名称
-            string hv = ";Upload/201606140819362.jpg;Upload/201606140819364.jpg";
+            //string hv = ";Upload/201606140819362.jpg;Upload/201606140819364.jpg";
             //从Hidden控件获取文件集合
-            Response.Write(Hidden1.Value + "<br/>");
+            Response.Write(Hidden1.Value + "<br/>" +HiddenDefault.Value+ "<br/>");
+            //return;
             //Tools t = new Tools();
-            //List<string> l = t.GetFilename(Hidden1.Value);
+            List<string> l = up.GetFilename(Hidden1.Value);
             //UploadPic up = new UploadPic();
-            List<string> l = up.GetFilename(hv);
+            //List<string> l = up.GetFilename(hv);
 
             //foreach (string s in l)
             //    Response.Write(Server.MapPath(s)+"<br/>");
@@ -124,6 +128,18 @@ namespace WebTestApplication2.FileUpload
             Repeater1.DataBind();
             //Label2.Text = ((Image)((Button)sender).Parent.FindControl("img")).ImageUrl;
             */
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Label1.Text = DropDownList1.SelectedValue;
+            //InitandBind();
+        }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+            Label1.Text = "重置成功";
+            InitandBind();
         }
     }
 }
