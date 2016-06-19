@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Core;
 
 namespace WebTestApplication2.FileUpload
 {
@@ -39,10 +40,14 @@ namespace WebTestApplication2.FileUpload
                             return;
                         }
                         //DateTime dt = new DateTime();
-                        string newFilename = DateTime.Now.ToString("yyyyMMddhhmmss")+extName; 
-                        Response.Write(filepath+ newFilename + "<br/>");
+                        string newFilename = DateTime.Now.ToString("yyyyMMddhhmmss")+i+extName;
+                        //Response.Write(filepath+ newFilename + "<br/>");
                         //Label1.Text += "文件 #" + (i + 1) + "：" + System.IO.Path.GetFileName(postedFile.FileName) + "〈br/>";
-                        //postedFile.SaveAs(filepath + System.IO.Path.GetFileName(postedFile.FileName));
+                        string newfilepath = filepath + newFilename ;
+                        postedFile.SaveAs(newfilepath);
+                        test t = new test();
+                        bool succeed=t.AddPic(newFilename);
+                        if (succeed) Label1.Text = "上传成功";
                     }
                 }
                 catch (Exception Ex)

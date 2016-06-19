@@ -99,10 +99,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\Test.mdf" />
+    <Content Include="App_Data\Test_log.ldf">
+      <DependentUpon>Test.mdf</DependentUpon>
+    </Content>
     <Content Include="Business\EnteringCompanyInformation.aspx" />
     <Content Include="DataControls\DetailsView.aspx" />
     <Content Include="FileUpload\FileUploadRepeaterTest.aspx" />
     <Content Include="FileUpload\FileUploadTest.aspx" />
+    <Content Include="FileUpload\jsFileUploadtest.aspx" />
+    <Content Include="FileUpload\upload\201606141107311.jpg" />
     <Content Include="Images\a.jpg" />
     <Content Include="Images\b.jpg" />
     <Content Include="Images\pic1.jpg" />
@@ -128,6 +134,12 @@
     </Content>
     <Content Include="Account\AjaxHandler1.ashx" />
     <Content Include="scripts\default.css" />
+    <None Include="scripts\jquery-1.8.2-vsdoc.js" />
+    <None Include="scripts\jquery-1.8.2.intellisense.js" />
+    <None Include="scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="scripts\jquery-1.4.4.min.js" />
+    <Content Include="scripts\jquery-1.8.2.js" />
+    <Content Include="scripts\jquery-1.8.2.min.js" />
     <Content Include="scripts\jquery.SuperSlide.2.1.1.js" />
     <Content Include="scripts\jquery1.42.min.js" />
     <Content Include="ShowTest\ShowControlTest.aspx" />
@@ -201,6 +213,13 @@
     </Compile>
     <Compile Include="FileUpload\FileUploadTest.aspx.designer.cs">
       <DependentUpon>FileUploadTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload\jsFileUploadtest.aspx.cs">
+      <DependentUpon>jsFileUploadtest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileUpload\jsFileUploadtest.aspx.designer.cs">
+      <DependentUpon>jsFileUploadtest.aspx</DependentUpon>
     </Compile>
     <Compile Include="JQueryTest\Repeater.aspx.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>

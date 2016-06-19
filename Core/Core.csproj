@@ -49,6 +49,8 @@
     <Compile Include="GetContent.cs" />
     <Compile Include="MyUser.cs" />
     <Compile Include="test.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="UploadPic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

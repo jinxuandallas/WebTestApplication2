@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Core
 {
@@ -30,6 +31,24 @@ namespace Core
             string sql = "insert into [企业] (企业名称) values(@companyname)";
             Guid gg= Guid.Parse(InsertReturnGUID(sql, new SqlParameter[] { new SqlParameter("@companyname", companyName) }));
             return gg;
+        }
+
+        public bool AddPic(string filename)
+        {
+            //只能服务器使用相对路径，使用绝对路径客户端打不开（调用的是客户端文件）
+            string filepath= "~/FileUpload/Upload/"+filename;
+            string sql = "insert 图片(图片地址) values(@filepath)";
+            int rtn = ExecuteSql(sql, new SqlParameter[] { new SqlParameter("@filepath", filepath) });
+            if (rtn == 1)
+                return true;
+            return false;
+        }
+
+        public DataSet GetPic()
+        {
+            DataSet ds= GetDataSet("select 图片地址 from 图片");
+            ds.Tables[0].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns[0] };
+            return ds;
         }
     }
 }
