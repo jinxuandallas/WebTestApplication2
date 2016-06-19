@@ -150,7 +150,11 @@
             if ($(this).val()=="1")
                 $(".defaultButton").show();
             else
+            {
                 $(".defaultButton").hide();
+                //将HiddenDefault值清空（？有没有必要？）
+                //$("#HiddenDefault").val("");
+            };
             //alert($(this).val());
         })
         

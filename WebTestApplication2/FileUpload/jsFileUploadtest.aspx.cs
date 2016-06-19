@@ -103,7 +103,7 @@ namespace WebTestApplication2.FileUpload
                         bool succeed = t.AddPic(newFilename);
                         if (succeed) Label1.Text = "上传成功";
                         //*/
-                        InitandBind();
+                        
                     }
                 }
                 catch (Exception Ex)
@@ -112,6 +112,8 @@ namespace WebTestApplication2.FileUpload
                     //Label1.Text += "发生错误： " + Ex.Message;
                 }
             }
+
+            InitandBind();
         }
 
         protected void Button2_Click(object sender, EventArgs e)
