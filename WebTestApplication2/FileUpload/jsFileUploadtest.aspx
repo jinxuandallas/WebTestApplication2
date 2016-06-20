@@ -59,15 +59,11 @@
         
         <input id="Hidden1" type="hidden" runat="server"/>
         <input id="HiddenDefault" type="hidden" runat="server"/>
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
+       
                 <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                 
-            </ContentTemplate>
-        </asp:UpdatePanel>
-        <asp:DropDownList ID="DropDownList1" CssClass="dwl" runat="server"  OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            
+        <asp:DropDownList ID="DropDownList1" CssClass="dwl" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
             <asp:ListItem>1</asp:ListItem>
             <asp:ListItem>2</asp:ListItem>
             <asp:ListItem>3</asp:ListItem>
@@ -132,12 +128,13 @@
             //    $("#HiddenDefault").val()="";
             //图片删除后，腾出的位置用于上传新的控件
             a++;
+            alert($("#Hidden1").val())
             //在客户端删除图片
             $(this).parent().remove();
             //alert($("#HiddenDefault").val());
             //alert($(this).parent().find(".pic").attr("src"));
             //alert($("#Hidden1").attr("value"));
-            alert("xx");
+            
         });
         //*/
         
