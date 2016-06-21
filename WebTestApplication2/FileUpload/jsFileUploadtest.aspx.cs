@@ -42,6 +42,7 @@ namespace WebTestApplication2.FileUpload
             //string hv = ";Upload/201606140819362.jpg;Upload/201606140819364.jpg";
             //从Hidden控件获取文件集合
             Response.Write(Hidden1.Value + "<br/>" +HiddenDefault.Value+ "<br/>");
+            return;
             //return;
             //Tools t = new Tools();
             List<string> l = up.GetFilename(Hidden1.Value);

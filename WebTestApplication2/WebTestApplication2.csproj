@@ -108,6 +108,7 @@
     <Content Include="FileUpload\FileUploadRepeaterTest.aspx" />
     <Content Include="FileUpload\FileUploadTest.aspx" />
     <Content Include="FileUpload\jsFileUploadtest.aspx" />
+    <Content Include="FileUpload\TestjQuery.aspx" />
     <Content Include="FileUpload\upload\201606141107311.jpg" />
     <Content Include="Images\a.jpg" />
     <Content Include="Images\b.jpg" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="FileUpload\jsFileUploadtest.aspx.designer.cs">
       <DependentUpon>jsFileUploadtest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload\TestjQuery.aspx.cs">
+      <DependentUpon>TestjQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileUpload\TestjQuery.aspx.designer.cs">
+      <DependentUpon>TestjQuery.aspx</DependentUpon>
     </Compile>
     <Compile Include="JQueryTest\Repeater.aspx.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>
