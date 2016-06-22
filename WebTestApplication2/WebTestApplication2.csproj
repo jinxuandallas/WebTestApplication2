@@ -105,6 +105,7 @@
     </Content>
     <Content Include="Business\EnteringCompanyInformation.aspx" />
     <Content Include="DataControls\DetailsView.aspx" />
+    <Content Include="DataControls\ListView.aspx" />
     <Content Include="FileUpload\FileUploadRepeaterTest.aspx" />
     <Content Include="FileUpload\FileUploadTest.aspx" />
     <Content Include="FileUpload\jsFileUploadtest.aspx" />
@@ -200,6 +201,13 @@
     </Compile>
     <Compile Include="DataControls\DetailsView.aspx.designer.cs">
       <DependentUpon>DetailsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\ListView.aspx.cs">
+      <DependentUpon>ListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataControls\ListView.aspx.designer.cs">
+      <DependentUpon>ListView.aspx</DependentUpon>
     </Compile>
     <Compile Include="FileUpload\FileUploadRepeaterTest.aspx.cs">
       <DependentUpon>FileUploadRepeaterTest.aspx</DependentUpon>
