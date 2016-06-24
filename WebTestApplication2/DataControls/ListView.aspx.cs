@@ -13,5 +13,12 @@ namespace WebTestApplication2.DataControls
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write((((Button)sender).Parent.FindControl("IDLabel") as Label).Text);
+            Response.Write("<br/>" + ListView1.SelectedValue);
+            Response.Write("<br/>" + ListView1.SelectedIndex);
+        }
     }
 }
