@@ -6,20 +6,22 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <script src="../scripts/jquery-1.4.4.min.js"></script>
     <style type="text/css">
         .auto-style1 {
             height: 20px;
         }
         .auto-style2 {
-            float: left;
-            width: 314px;
+           
+            width: 150px;
             height: 50px;
         }
         .auto-style3 {
-            float: left;
-            width: 312px;
+            
+            width: 150px;
             height: 100px;
         }
+        .btn{}
     </style>
 </head>
 <body>
@@ -33,36 +35,31 @@
             </EmptyDataTemplate>
             
             <ItemTemplate>
-                <tr>
-                    <td rowspan="2" style="width:300px;height:70px">图片地址:
-                <asp:Label ID="图片地址Label"  runat="server" Text='<%# Eval("图片地址") %>' Style="word-break:break-all" /></td>
-                    <td>ID:
+                <div  style="padding: 10px; margin: 10px; border: solid; border-width: 1px; border-color: black; width:500px; height:150px">
+                    <div style="float: left;width:150px;height:120px; margin: 10px">图片地址:
+                <asp:Label ID="图片地址Label"  runat="server" Text='<%# Eval("图片地址") %>' Style="word-break:break-all" />
+                    ID:
                 <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>'  Visible="false"/>
-                </td>
-                    <td>
-                        <asp:Button ID="Button1" runat="server" Text="Button"  CommandName="Select" OnClick="Button1_Click"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>所属企业:
-                <asp:Label ID="所属企业Label" runat="server" Text='<%# Eval("所属企业") %>' />
-                <br /></td>
-                    <td>图片类型:
-                <asp:Label ID="图片类型Label" runat="server" Text='<%# Eval("图片类型") %>' />
-                <br /></td>
-                </tr>
-                
-                
-                
+                </div>
                     
-<br />
+               
+                <div style="float: left;width:200px;height:120px; margin: 10px">
+                    <div style="clear:both;width:170px;height:50px; margin: 10px">
+                   所属企业:
+                <asp:Label ID="所属企业Label" runat="server" Text='<%# Eval("所属企业") %>' />
+                </div>
+                    <div style="width:170px;height:50px; margin: 10px">图片类型:
+                <asp:Label ID="图片类型Label" runat="server" Text='<%# Eval("图片类型") %>' />
+                </div>
+                
+                </div>
+                    <div style="float:left; width:70px;height:60px; margin: 10px"><asp:Button ID="Button2" CssClass="btn" runat="server" Text="Button"  OnClick="Button1_Click"/></div>
+                    </div>
             </ItemTemplate>
             <LayoutTemplate>
-                <table>
-                    <tr runat="server" id="itemPlaceholder">
-
-                    </tr>
-                </table>
+                    <div runat="server" id="itemPlaceholder">
+                    </div>
+               
                 <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
                     <asp:DataPager ID="DataPager1"  PageSize="3" runat="server">
                         <Fields>
@@ -111,7 +108,9 @@
         </table>
     <div style="padding: 10px; margin: 10px; border: solid; border-width: 1px; border-color: black; width:700px; height:300px">
         <div style="float: left;width:200px;height:250px; margin: 10px">aa</div>
-        <div style="margin: 10px" class="auto-style3">bb</div>
+        <div style="float: left;width:250px;height:250px; margin: 10px"><div style="clear:both; margin: 10px" class="auto-style3">bb</div><div style="margin: 10px" class="auto-style2">cc</div></div>
+        <div style="margin: 10px;width:200px;height:300px" >dd<br /><div style="width:150px">ee</div></div>
+        
         <br />
         <br />
         <br />
@@ -119,10 +118,18 @@
         <br />
         <br />
         <br />
-        <br />
-        <div style="margin: 10px" class="auto-style2">cc</div>
+        
     </div>
     </div>
     </form>
+    <script>
+        $(".btn").click(function () {
+            return confirm("ok?");
+        })
+        //$(function (){
+        //    $(".btn").d
+        //})
+    </script>
 </body>
+   
 </html>

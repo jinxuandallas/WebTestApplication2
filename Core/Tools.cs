@@ -12,6 +12,10 @@ namespace Core
         {
 
         }
+        public string Long2CapitalString(string longString)
+        {
+            return longString + "xxx";
+        }
 
         public List<string> GetFilename(string filenamestring)
         {
