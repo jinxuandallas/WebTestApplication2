@@ -105,6 +105,7 @@
     </Content>
     <Content Include="Business\EnteringCompanyInformation.aspx" />
     <Content Include="DataControls\DetailsView.aspx" />
+    <Content Include="DataControls\DivTest.aspx" />
     <Content Include="DataControls\ListView.aspx" />
     <Content Include="DataControls\ListView2.aspx" />
     <Content Include="Div\DivTest.aspx" />
@@ -148,6 +149,7 @@
     <Content Include="scripts\jquery1.42.min.js" />
     <Content Include="ShowTest\ShowControlTest.aspx" />
     <Content Include="table.aspx" />
+    <Content Include="Test\DateTextboxTest.aspx" />
     <Content Include="Web3.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="MasterPage\Site1.Master" />
@@ -203,6 +205,13 @@
     </Compile>
     <Compile Include="DataControls\DetailsView.aspx.designer.cs">
       <DependentUpon>DetailsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\DivTest.aspx.cs">
+      <DependentUpon>DivTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataControls\DivTest.aspx.designer.cs">
+      <DependentUpon>DivTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataControls\ListView.aspx.cs">
       <DependentUpon>ListView.aspx</DependentUpon>
@@ -358,6 +367,13 @@
     </Compile>
     <Compile Include="table.aspx.designer.cs">
       <DependentUpon>table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\DateTextboxTest.aspx.cs">
+      <DependentUpon>DateTextboxTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\DateTextboxTest.aspx.designer.cs">
+      <DependentUpon>DateTextboxTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Textbox.aspx.cs">
       <DependentUpon>Textbox.aspx</DependentUpon>
