@@ -45,7 +45,11 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.7.429, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\ajaxcontroltoolkit.binary.net4\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\ajaxcontroltoolkit.binary.net4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.resources, Version=4.1.7.429, Culture=zh-CHS, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ajaxcontroltoolkit.binary.net4\zh-CHS\AjaxControlToolkit.resources.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -150,6 +154,9 @@
     <Content Include="ShowTest\ShowControlTest.aspx" />
     <Content Include="table.aspx" />
     <Content Include="Test\DateTextboxTest.aspx" />
+    <Content Include="Test\ImageButtonTest.aspx" />
+    <Content Include="Test\TabContainer.aspx" />
+    <Content Include="Test\TextboxTest.aspx" />
     <Content Include="Web3.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="MasterPage\Site1.Master" />
@@ -374,6 +381,27 @@
     </Compile>
     <Compile Include="Test\DateTextboxTest.aspx.designer.cs">
       <DependentUpon>DateTextboxTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ImageButtonTest.aspx.cs">
+      <DependentUpon>ImageButtonTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ImageButtonTest.aspx.designer.cs">
+      <DependentUpon>ImageButtonTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TabContainer.aspx.cs">
+      <DependentUpon>TabContainer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\TabContainer.aspx.designer.cs">
+      <DependentUpon>TabContainer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TextboxTest.aspx.cs">
+      <DependentUpon>TextboxTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\TextboxTest.aspx.designer.cs">
+      <DependentUpon>TextboxTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Textbox.aspx.cs">
       <DependentUpon>Textbox.aspx</DependentUpon>
