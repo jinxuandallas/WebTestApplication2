@@ -12,6 +12,7 @@ namespace WebTestApplication2.Test
         protected void Page_Load(object sender, EventArgs e)
         {
             TextBox1.Text = "sdfsdfsdf东风东放松扥冬至sdfsdfsdf东风东放松扥冬至sdfsdfsdf东风东放松扥冬至sdfsdfsdf东风东放松扥冬至sdfsdfsdf东风东放松扥冬至sdfsdfsdf东风东放松扥冬至sdfsdfsdf东风东放松扥冬至";
+            Label1.Text = TextBox1.Text;
         }
     }
 }

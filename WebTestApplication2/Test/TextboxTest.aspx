@@ -23,6 +23,11 @@
         
     
        
+        <asp:Label ID="Label1" runat="server" Width="200px" Style="border:solid ;border-color:black;border-width:1px; word-wrap : break-word; word-break: break-all;height:100px;overflow-y: scroll;"></asp:Label>
+    
+        
+    
+       
     </div>
     </form>
 </body>
