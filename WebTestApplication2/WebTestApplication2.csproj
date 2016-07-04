@@ -153,6 +153,7 @@
     <Content Include="scripts\jquery1.42.min.js" />
     <Content Include="ShowTest\ShowControlTest.aspx" />
     <Content Include="table.aspx" />
+    <Content Include="Test\Bind.aspx" />
     <Content Include="Test\DateTextboxTest.aspx" />
     <Content Include="Test\ImageButtonTest.aspx" />
     <Content Include="Test\TabContainer.aspx" />
@@ -374,6 +375,13 @@
     </Compile>
     <Compile Include="table.aspx.designer.cs">
       <DependentUpon>table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Bind.aspx.cs">
+      <DependentUpon>Bind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\Bind.aspx.designer.cs">
+      <DependentUpon>Bind.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test\DateTextboxTest.aspx.cs">
       <DependentUpon>DateTextboxTest.aspx</DependentUpon>
