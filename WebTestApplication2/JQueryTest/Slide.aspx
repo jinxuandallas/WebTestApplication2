@@ -67,7 +67,7 @@
 		</div>
              </form>
 		<script type="text/javascript">
-		jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true});
+		    jQuery(".slideBox").slide({ mainCell: ".bd ul", trigger: "click" });
 		</script>
 
    
