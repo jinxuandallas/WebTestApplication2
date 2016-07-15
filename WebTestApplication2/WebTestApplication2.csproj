@@ -130,6 +130,7 @@
     <Content Include="Images\qq.jpg" />
     <Content Include="Images\slider-arrow.png" />
     <Content Include="JQueryTest\2.0-focus.html" />
+    <Content Include="JQueryTest\Readmore.aspx" />
     <Content Include="JQueryTest\Repeater.aspx" />
     <Content Include="JQueryTest\Slide.aspx" />
     <Content Include="JQueryTest\SlideRepeater.aspx" />
@@ -151,6 +152,7 @@
     <Content Include="scripts\jquery-1.8.2.min.js" />
     <Content Include="scripts\jquery.SuperSlide.2.1.1.js" />
     <Content Include="scripts\jquery1.42.min.js" />
+    <Content Include="scripts\readmore.min.js" />
     <Content Include="ShowTest\ShowControlTest.aspx" />
     <Content Include="table.aspx" />
     <Content Include="Test\Bind.aspx" />
@@ -269,6 +271,13 @@
     </Compile>
     <Compile Include="FileUpload\TestjQuery.aspx.designer.cs">
       <DependentUpon>TestjQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryTest\Readmore.aspx.cs">
+      <DependentUpon>Readmore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryTest\Readmore.aspx.designer.cs">
+      <DependentUpon>Readmore.aspx</DependentUpon>
     </Compile>
     <Compile Include="JQueryTest\Repeater.aspx.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>
