@@ -130,6 +130,7 @@
     <Content Include="Images\qq.jpg" />
     <Content Include="Images\slider-arrow.png" />
     <Content Include="JQueryTest\2.0-focus.html" />
+    <Content Include="JQueryTest\RatyTest.aspx" />
     <Content Include="JQueryTest\Readmore.aspx" />
     <Content Include="JQueryTest\Repeater.aspx" />
     <Content Include="JQueryTest\Slide.aspx" />
@@ -150,6 +151,9 @@
     <Content Include="scripts\jquery-1.4.4.min.js" />
     <Content Include="scripts\jquery-1.8.2.js" />
     <Content Include="scripts\jquery-1.8.2.min.js" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\jquery.raty.js" />
+    <Content Include="scripts\jquery.raty.min.js" />
     <Content Include="scripts\jquery.SuperSlide.2.1.1.js" />
     <Content Include="scripts\jquery1.42.min.js" />
     <Content Include="scripts\readmore.min.js" />
@@ -271,6 +275,13 @@
     </Compile>
     <Compile Include="FileUpload\TestjQuery.aspx.designer.cs">
       <DependentUpon>TestjQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryTest\RatyTest.aspx.cs">
+      <DependentUpon>RatyTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryTest\RatyTest.aspx.designer.cs">
+      <DependentUpon>RatyTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="JQueryTest\Readmore.aspx.cs">
       <DependentUpon>Readmore.aspx</DependentUpon>
@@ -481,6 +492,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="JQueryTest\demo\" />
+    <Folder Include="JQueryTest\img\" />
+    <Folder Include="JQueryTest\js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
