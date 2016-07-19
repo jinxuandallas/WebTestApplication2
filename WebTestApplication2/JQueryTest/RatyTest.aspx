@@ -7,10 +7,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style>
-      .raty{}
-      .group{
-          font: 11px verdana;
-      }
+        .raty {
+        }
+
+        .group {
+            font: 11px verdana;
+        }
     </style>
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.raty.min.js" type="text/javascript"></script>
@@ -48,7 +50,7 @@
                                 start: <%# Eval("raty") %>,
                             });
                         </script>
-                        <div  id="idraty" class="raty" style="font: 11px verdana;"></div>
+                        <div id="idraty" class="raty" style="font: 11px verdana;"></div>
                         <%--<asp:Label ID="ratyLabel" runat="server" Text='<%# Eval("raty") %>' />--%>
                     </td>
                 </tr>
@@ -84,20 +86,27 @@
         </asp:ListView>
 
         <div class="group"></div>
-<div class="group"></div>
-<div class="group"></div>
-        <asp:Repeater ID="Repeater1" runat="server"  DataSourceID="SqlDataSource1">
+        <div class="group"></div>
+        <div class="group"></div>
+        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
-              <asp:Label ID="label" runat="server" Text='<%#Eval("name") %>'></asp:Label>
-                
-                <div id="rraty"></div>
+                <asp:Label ID="label" runat="server" Text='<%#Eval("name") %>'></asp:Label>
+
+                <div id="rraty" class="raty"></div>
                 <br />
             </ItemTemplate>
         </asp:Repeater>
 
         <script>
-                    $("#rraty").raty();
-                </script>
+            $(function(){
+                $(".raty").each(function(score,edole){
+                    $(this).raty({
+                    start: score
+                    });
+                })
+
+            })
+        </script>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [raty]"></asp:SqlDataSource>
     </form>
 
@@ -118,7 +127,7 @@
         //    $("#star").raty({ hintList: ['test1', 'test12', 'test13', 'test14', 'test15'] });
         //});
     </script>
-    
+
 
 
 </body>
