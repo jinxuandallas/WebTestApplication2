@@ -119,7 +119,8 @@
     <script type="text/javascript">
         $('#star').raty({
             hintList: ['很差', '较差', '一般', '较好', '很好'],
-            start: 2,
+            start: 2.8,
+            half: true,
             targetKeep: true,
             click: function (score, evt) {
                 $("#score").val(score);
