@@ -45,12 +45,17 @@
                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
                     </td>
                     <td>
-                        <script>
-                            $(".raty").raty({
-                                start: <%# Eval("raty") %>,
+                        <%--<script>
+                            $(function () {
+                                 $(".raty").raty({
+                                    start: <%# Eval("raty") %>,
+                                });
                             });
+                           
                         </script>
-                        <div id="idraty" class="raty" style="font: 11px verdana;"></div>
+                      --%>
+                        <input type="hidden" value='<%#Eval("raty") %>' />
+                        <div id="divRaty" runat="server" class="raty" style="font: 11px verdana;"></div>
                         <%--<asp:Label ID="ratyLabel" runat="server" Text='<%# Eval("raty") %>' />--%>
                     </td>
                 </tr>
@@ -92,16 +97,17 @@
             <ItemTemplate>
                 <asp:Label ID="label" runat="server" Text='<%#Eval("name") %>'></asp:Label>
 
-                <div id="rraty" class="raty"></div>
+                <div class="raty" runat="server"></div>
                 <br />
             </ItemTemplate>
         </asp:Repeater>
 
         <script>
             $(function(){
-                $(".raty").each(function(score,edole){
+                $(".raty").each(function () {
+                    var ratyValue = $(this).parent().find("input[type=hidden]").val();
                     $(this).raty({
-                    start: score
+                        start: ratyValue
                     });
                 })
 
@@ -121,7 +127,7 @@
         });
         
         //$(".raty").raty()
-        $('.group').raty();
+        //$('.group').raty();
                        
         //$(function () {
         //    $("#star").raty({ hintList: ['test1', 'test12', 'test13', 'test14', 'test15'] });
