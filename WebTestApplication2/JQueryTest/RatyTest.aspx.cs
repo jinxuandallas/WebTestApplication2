@@ -13,5 +13,10 @@ namespace WebTestApplication2.JQueryTest
         {
             
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write(score.Value);
+        }
     }
 }
