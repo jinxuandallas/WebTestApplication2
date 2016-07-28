@@ -66,7 +66,13 @@ border-top: 0;
 padding: 8px;
 background-color: white;
 }
-    </style>
+ .raty{
+
+ }
+
+      </style>
+    <script src="../scripts/jquery-1.8.2.min.js"></script>
+    <script src="../scripts/jquery.raty.min.js"></script>
 </head>
 
 
@@ -78,10 +84,7 @@ background-color: white;
             Width="600px" OnDemand="true">
             <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1" OnDemandMode="Once">
                 <ContentTemplate>
-                    I'm tab 1, I was rendered at
-                    <%= DateTime.Now.ToString("T") %>
-                    <br />
-                    My OnDemandMode is &#39;Once&#39;
+                   <div style="float: left; font: 11px verdana;" id="Star" class="raty" runat="server"></div>
                 </ContentTemplate>
             </ajaxToolkit:TabPanel>
             <ajaxToolkit:TabPanel ID="TabPanel2" runat="server" HeaderText="TabPanel2" OnDemandMode="Always">
@@ -110,5 +113,11 @@ background-color: white;
         </ajaxToolkit:TabContainer>
     </div>
     </form>
+    <script>
+        $('.raty').raty({
+            path: '../JQueryTest/img/',
+            start: 3
+        })
+    </script>
 </body>
 </html>

@@ -130,6 +130,7 @@
     <Content Include="Images\qq.jpg" />
     <Content Include="Images\slider-arrow.png" />
     <Content Include="JQueryTest\2.0-focus.html" />
+    <Content Include="JQueryTest\PicTest.aspx" />
     <Content Include="JQueryTest\RatyTest.aspx" />
     <Content Include="JQueryTest\Readmore.aspx" />
     <Content Include="JQueryTest\Repeater.aspx" />
@@ -275,6 +276,13 @@
     </Compile>
     <Compile Include="FileUpload\TestjQuery.aspx.designer.cs">
       <DependentUpon>TestjQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryTest\PicTest.aspx.cs">
+      <DependentUpon>PicTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryTest\PicTest.aspx.designer.cs">
+      <DependentUpon>PicTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="JQueryTest\RatyTest.aspx.cs">
       <DependentUpon>RatyTest.aspx</DependentUpon>
