@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business.cs" />
+    <Compile Include="CommentClass.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="ManageRichtextboxContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
