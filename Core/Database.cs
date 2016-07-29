@@ -10,6 +10,7 @@ namespace Core
 	/// DataBase 的摘要说明。
 	/// </summary>
 	
+
 	public abstract class Database
 	{
 		/// <summary>
@@ -17,12 +18,12 @@ namespace Core
 		/// </summary>
 		protected SqlConnection Connection;
 		private string connectionString;
-		private SqlDataReader dr;
+        protected string sql;
 
-		/// <summary>
-		/// 默认构造函数。
-		/// </summary>
-		public Database()
+        /// <summary>
+        /// 默认构造函数。
+        /// </summary>
+        public Database()
 		{
             connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
 			Connection = new SqlConnection( connectionString );
@@ -130,13 +131,30 @@ namespace Core
 			return dataSet;
 		}
 
-		
-		/// <summary>
-		/// 运行Sql语句，并生成含有结果的DataSet实体
-		/// </summary>
-		/// <param name="Sql">要执行的Sql语句</param>
-		/// <returns>含有结果的DataSet实体</returns>
-		protected DataSet GetDataSet(string Sql )
+        /// <summary>
+        /// 运行Sql语句，并生成含有结果的DataSet实体
+        /// </summary>
+        /// <param name="Sql">要执行的Sql语句</param>
+        /// <param name="parameters">参数列表（无参数时请传入“null”）</param>
+        /// <returns>含有结果的DataSet实体</returns>
+        protected DataSet GetDataSet(string Sql, IDataParameter[] parameters)
+        {
+            DataSet dataSet = new DataSet();
+            if (Connection.State == ConnectionState.Closed) Connection.Open();
+            SqlDataAdapter sqlDA = new SqlDataAdapter();
+            sqlDA.SelectCommand = BuildCommand(Sql, parameters);
+            sqlDA.Fill(dataSet);
+            Connection.Close();
+
+            return dataSet;
+        }
+
+        /// <summary>
+        /// 运行Sql语句，并生成含有结果的DataSet实体
+        /// </summary>
+        /// <param name="Sql">要执行的Sql语句</param>
+        /// <returns>含有结果的DataSet实体</returns>
+        protected DataSet GetDataSet(string Sql )
 		{
 			 DataSet dataSet = new DataSet();
 			if (Connection.State==ConnectionState.Closed) Connection.Open();
