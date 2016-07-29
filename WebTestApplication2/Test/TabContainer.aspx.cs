@@ -18,12 +18,23 @@ namespace WebTestApplication2.Test
             Session["CompanyID"] = System.Configuration.ConfigurationManager.AppSettings["companyID"];
 
             commentc = new CommentClass();
-            ListViewResult.DataSource = commentc.GetComments(Guid.Parse(Session["CompanyID"].ToString()));
-            ListViewResult.DataBind();
+            
         }
 
         protected void TabContainer1_ActiveTabChanged(object sender, EventArgs e)
         {
+            switch (TabContainer1.ActiveTabIndex)
+            {
+                case 1:
+                    ListViewResult.DataSource = commentc.GetComments(Guid.Parse(Session["CompanyID"].ToString()));
+                    ListViewResult.DataBind();
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "do", @" <script>
+alert('xxx')
+        </script> ");
+                    break;
+                default:
+                    break;
+            }
         //    ListViewResult.DataSource = commentc.GetComments(Guid.Parse(Session["CompanyID"].ToString()));
         //    ListViewResult.DataBind();
         //    string strScript= @"<script>$(function () {
@@ -39,6 +50,13 @@ namespace WebTestApplication2.Test
 
         //})</script>";
         //    ClientScript.RegisterClientScriptBlock(this.GetType(),"raty",strScript);
+        }
+
+        protected void ListViewResult_DataBound(object sender, EventArgs e)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "do", @" <script>
+alert('xxx')
+        </script> ");
         }
     }
 }

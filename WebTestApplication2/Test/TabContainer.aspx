@@ -82,9 +82,10 @@
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <div>
-            <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" CssClass="ajax__tab_wf" ActiveTabIndex="0" OnClientActiveTabChanged="clientActiveTabChanged"
+            <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" CssClass="ajax__tab_wf" ActiveTabIndex="0" 
+                
                 Width="1000px" OnDemand="true" OnActiveTabChanged="TabContainer1_ActiveTabChanged">
-                <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1" OnDemandMode="Once">
+                <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1" OnDemandMode="Always">
                     <ContentTemplate>
                         I'm tab 2, I was rendered at
                     <%= DateTime.Now.ToString("T") %>
@@ -93,11 +94,12 @@
                    
                     </ContentTemplate>
                 </ajaxToolkit:TabPanel>
-                <ajaxToolkit:TabPanel ID="TabPanel2" runat="server" HeaderText="TabPanel2" OnDemandMode="Once">
+                <ajaxToolkit:TabPanel ID="TabPanel2" runat="server" HeaderText="TabPanel2" OnDemandMode="Always">
                     <ContentTemplate>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate>
                         <div style="float: left; font: 11px verdana;" id="Star" class="raty1" runat="server"></div>
-
-                        <asp:ListView ID="ListViewResult" runat="server">
+                        
+                        <asp:ListView ID="ListViewResult" runat="server" OnDataBound="ListViewResult_DataBound">
                             <LayoutTemplate>
                                 <div id="itemPlaceholder" style="width: 1000px" runat="server"></div>
                                 <div style="width: 1000px; text-align: center; background-color: #CCCCCC; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000;">
@@ -145,9 +147,10 @@
 
                             </ItemTemplate>
                         </asp:ListView>
+                            </ContentTemplate></asp:UpdatePanel>
                     </ContentTemplate>
                 </ajaxToolkit:TabPanel>
-                <ajaxToolkit:TabPanel ID="TabPanel3" runat="server" HeaderText="TabPanel3" OnDemandMode="None">
+                <ajaxToolkit:TabPanel ID="TabPanel3" runat="server" HeaderText="TabPanel3" OnDemandMode="Always">
                     <ContentTemplate>
                         I'm tab 3, I was rendered at
                     <%= DateTime.Now.ToString("T") %>
@@ -155,7 +158,7 @@
                         My OnDemandMode is &#39;None&#39;
                     </ContentTemplate>
                 </ajaxToolkit:TabPanel>
-                <ajaxToolkit:TabPanel ID="TabPanel4" runat="server" HeaderText="TabPanel4" OnDemandMode="Once">
+                <ajaxToolkit:TabPanel ID="TabPanel4" runat="server" HeaderText="TabPanel4" OnDemandMode="Always">
                     <ContentTemplate>
                         I'm tab 4. Hey, I&#39;m loaded only once!<br />
                         I was rendered at
@@ -182,7 +185,7 @@
         //    })
 
         //})
-        function clientActiveTabChanged(sender, args) {
+        <%--function clientActiveTabChanged(sender, args) {
             if ($find("<%=TabContainer1.ClientID%>").get_activeTabIndex() == 1) {
                 $(function () {
                     $(".raty").each(function () {
@@ -196,7 +199,7 @@
 
                 })
             }
-        }
+        }--%>
         //function ff() {
         //    alert("xxx");
         //    return true;
