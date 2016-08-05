@@ -162,6 +162,7 @@
     <Content Include="table.aspx" />
     <Content Include="Test\Bind.aspx" />
     <Content Include="Test\DateTextboxTest.aspx" />
+    <Content Include="Test\GetURLTest.aspx" />
     <Content Include="Test\ImageButtonTest.aspx" />
     <Content Include="Test\ScriptTest.aspx" />
     <Content Include="Test\TabContainer.aspx" />
@@ -418,6 +419,13 @@
     </Compile>
     <Compile Include="Test\DateTextboxTest.aspx.designer.cs">
       <DependentUpon>DateTextboxTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\GetURLTest.aspx.cs">
+      <DependentUpon>GetURLTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\GetURLTest.aspx.designer.cs">
+      <DependentUpon>GetURLTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test\ImageButtonTest.aspx.cs">
       <DependentUpon>ImageButtonTest.aspx</DependentUpon>
