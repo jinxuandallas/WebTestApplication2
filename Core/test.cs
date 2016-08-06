@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web;
 
 namespace Core
 {
@@ -49,6 +50,22 @@ namespace Core
             DataSet ds= GetDataSet("select 图片地址 from 图片");
             ds.Tables[0].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns[0] };
             return ds;
+        }
+
+        public string GetContent(Guid ID)
+        {
+            sql = "select 内容 from 企业 where ID=@ID";
+            using (SqlDataReader sdr = GetDataReader(sql, new SqlParameter[] { new SqlParameter("@ID", ID) }))
+            {
+                if (sdr.Read())
+                    return sdr[0].ToString();
+            }
+            return string.Empty;
+        }
+
+        public void AddList(string s, ref List<string> l)
+        {
+            l.Add(HttpContext.Current.Server.MapPath(s));
         }
     }
 }
