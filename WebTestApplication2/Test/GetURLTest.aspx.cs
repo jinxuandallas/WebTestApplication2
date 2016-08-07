@@ -39,12 +39,12 @@ namespace WebTestApplication2.Test
                     Response.Write(s2[0]);
 
 
-                    string ts = s2[0];
-                    ts = ts.Substring(0, ts.LastIndexOf("\\"));
-                    if (Directory.GetFiles(ts).Length + Directory.GetDirectories(ts).Length == 0)
-                    {
-                        Directory.Delete(ts);
-                    }
+                    //string ts = s2[0];
+                    //ts = ts.Substring(0, ts.LastIndexOf("\\"));
+                    //if (Directory.GetFiles(ts).Length + Directory.GetDirectories(ts).Length == 0)
+                    //{
+                    //    Directory.Delete(ts);
+                    //}
 
                 }
                 start = s.IndexOf("<img",end+2);
