@@ -129,6 +129,8 @@
     <Content Include="Images\pic7.jpg" />
     <Content Include="Images\qq.jpg" />
     <Content Include="Images\slider-arrow.png" />
+    <Content Include="Images\报错.png" />
+    <Content Include="Images\报错2.png" />
     <Content Include="JQueryTest\2.0-focus.html" />
     <Content Include="JQueryTest\PicTest.aspx" />
     <Content Include="JQueryTest\RatyTest.aspx" />
