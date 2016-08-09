@@ -7,7 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
+    
+    
 <body>
+    <style>
+        .menu{
+            font-size:12px;
+            color:black;
+        }
+    </style>
     <form id="form1" runat="server">
     <div>
     
@@ -23,6 +31,33 @@
             <StaticMenuItemStyle HorizontalPadding="30px"  VerticalPadding="15px" />
             <StaticSelectedStyle BackColor="#507CD1" />
         </asp:Menu>
+
+         
+
+         <asp:Menu ID="Menu3" runat="server" BackColor="#B5C7DE" DataSourceID="SiteMapDataSource3" DynamicHorizontalOffset="2" CssClass="menu" StaticSubMenuIndent="10px">
+             <DataBindings>
+                 <asp:MenuItemBinding DataMember="SiteMapNode" />
+             </DataBindings>
+             <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+             <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+             <DynamicMenuStyle BackColor="#B5C7DE" />
+             <DynamicSelectedStyle BackColor="#507CD1" />
+             <DynamicItemTemplate>
+                 <%# Eval("Text") %>
+             </DynamicItemTemplate>
+             <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+             <StaticSelectedStyle BackColor="#507CD1" />
+             <StaticItemTemplate>
+                 <%# Eval("Text") %>
+             </StaticItemTemplate>
+        </asp:Menu>
+
+         
+
+         <asp:SiteMapDataSource ID="SiteMapDataSource3" runat="server" SiteMapProvider="web1sitemap" />
+
+         
 
          <br />
 

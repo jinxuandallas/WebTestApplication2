@@ -50,3 +50,5 @@ C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WebTestApplication2
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WebTestApplication2\WebTestApplication2\bin\tr-TR\AjaxControlToolkit.resources.dll
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WebTestApplication2\WebTestApplication2\bin\zh-CHS\AjaxControlToolkit.resources.dll
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WebTestApplication2\WebTestApplication2\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WebTestApplication2\WebTestApplication2\bin\AjaxControlToolkit.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WebTestApplication2\WebTestApplication2\bin\AjaxControlToolkit.resources.dll
